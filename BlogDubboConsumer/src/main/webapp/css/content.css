@@ -1,0 +1,234 @@
+
+/*导航栏head  four*/
+
+#four ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#98bf21;
+}
+
+#four li {
+    float: left;
+}
+
+#four li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+	width:192px;
+	height:50px;
+    text-decoration: none;
+	line-height:50px;
+}
+
+#four li a:hover, .dropdown:hover .dropbtn {
+	background-color:#7A991A;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+	width:192px;
+	height:50px;
+	line-height:50px;
+    text-decoration: none;
+	text-align: center;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+img {
+	border:0px;
+	margin:0px;
+	padding:0px;
+}
+
+
+
+/*ad1页码*/
+
+.pagination {
+  list-style: none;
+    display: inline-block;
+  padding: 0;
+  margin-top:35px;
+  margin-left:230px;
+}
+ 
+
+.pagination li {
+  display: inline;
+  text-align: center;
+}
+
+
+.pagination a {
+  float: left;
+    display: block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 12px;
+  color: #fff;
+  margin-left: -1px;
+  border: 1px solid transparent;
+  line-height: 1.5;
+}
+
+.pagination a.active {
+  cursor: default;
+}
+.pagination a:active {
+  outline: none;
+}
+
+
+/*
+.modal-1 a {
+	  margin: 0 5px;
+		padding: 0px;
+		width: 30px;
+	height: 30px;
+	 background-color: #F7C12C;
+}
+*/
+
+.modal-1 a {
+  margin: 0 5px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background-color: #F7C12C;
+}
+.modal-1 a.prev {
+  -moz-border-radius: 50px 0 0 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px 0 0 50px;
+  width: 100px;
+}
+.modal-1 a.next {
+  -moz-border-radius: 0 50px 50px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 50px 50px 0;
+  width: 100px;
+}
+.modal-1 a:hover {
+  background-color: #FFA500;
+}
+.modal-1 a.active, .modal-4 a:active {
+  background-color: #FFA100;
+}
+
+
+/*图片弹窗*/
+#myImg {
+	border-radius:15px;
+	cursor:pointer;
+	transition:1s;
+}
+
+#myImg:hover {opacity: 0.3	;}
+
+.modal  {
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* 图片 */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+ 
+/* 文本内容 */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+ 
+/* 添加动画 */
+.modal-content, #caption { 
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+ 
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+ 
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+ 
+/* 关闭按钮 */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+ 
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+ 
+/* 小屏幕中图片宽度为 100% */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
