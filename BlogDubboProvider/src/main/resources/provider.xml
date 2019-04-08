@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+	<import resource="classpath:applicationContext-dao.xml" />
+	<import resource="classpath:applicationContext-service.xml" />
+	<import resource="classpath:applicationContext-trsaction.xml" />
+
+	<!-- 1、指定当前服务/应用的名字（同样的服务名字相同，不要和别的服务同名） -->
+	<dubbo:application name="service-provider"></dubbo:application>
+
+	<!-- 2、指定注册中心的位置 -->
+	<!-- <dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry> -->
+	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"></dubbo:registry>
+
+	<!-- 3、指定通信规则（通信协议？通信端口） -->
+	<dubbo:protocol name="dubbo" port="20882"></dubbo:protocol>
+
+	<!-- 4、暴露服务   ref：指向服务的真正的实现对象 -->
+	<dubbo:service interface="com.cai.service.BlackIpService"
+				   ref="blackIpService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="blackIpService" class="com.cai.service.impl.BlackIpServiceImpl"/>
+
+
+
+	<dubbo:service interface="com.cai.service.BlogerService"
+				   ref="blogerService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="blogerService" class="com.cai.service.impl.BlogerServiceImpl"/>
+
+
+	<dubbo:service interface="com.cai.service.BlogService"
+				   ref="blogService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="blogService" class="com.cai.service.impl.BlogServiceImpl"/>
+
+
+	<dubbo:service interface="com.cai.service.BlogTypeService"
+				   ref="blogTypeService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="blogTypeService" class="com.cai.service.impl.BlogTypeServiceImpl"/>
+
+
+	<dubbo:service interface="com.cai.service.CoursevideolistService"
+				   ref="coursevideolistService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="coursevideolistService" class="com.cai.service.impl.CoursevideolistServiceImpl"/>
+
+
+	<dubbo:service interface="com.cai.service.CoursevideoService"
+				   ref="coursevideoService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="coursevideoService" class="com.cai.service.impl.CoursevideoServiceImpl"/>
+
+
+	<dubbo:service interface="com.cai.service.LinksService"
+				   ref="linksService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="linksService" class="com.cai.service.impl.LinksServiceImpl"/>
+
+
+
+	<dubbo:service interface="com.cai.service.LogService"
+				   ref="logService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="logService" class="com.cai.service.impl.LogServiceImpl"/>
+
+
+
+	<dubbo:service interface="com.cai.service.ResourceService"
+				   ref="resourceService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="resourceService" class="com.cai.service.impl.ResourceServiceImpl"/>
+
+
+
+	<dubbo:service interface="com.cai.service.VisitService"
+				   ref="visitService" timeout="1000" version="1.0.0">
+	</dubbo:service>
+	<bean id="visitService" class="com.cai.service.impl.VisitServiceImpl"/>
+
+
+
+
+
+	<!--统一设置服务提供方的规则  -->
+	<dubbo:provider timeout="1000"></dubbo:provider>
+
+
+
+
+
+	<!-- 连接监控中心
+	<dubbo:monitor protocol="registry"></dubbo:monitor>-->
+
+
+
+
+</beans>

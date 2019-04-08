@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cai.mapper.FirstAppCoursevideoMapper">
+  <resultMap id="BaseResultMap" type="com.cai.model.CourseVideo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="click_count" jdbcType="INTEGER" property="clickCount" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+  </resultMap>
+  <select id="getById" resultMap="BaseResultMap" >
+    select * from first_app_coursevideo where id = #{id}
+  </select>
+</mapper>
