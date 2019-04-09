@@ -109,23 +109,22 @@
 
 
 
-
     <div class="lbox ">
       <div class="banbox">
         <div class="banner">
           <div id="banner" class="fader">
             <li class="slide" style=" "><a
-              href="#" target="_blank"><img
-                src="${pageContext.request.contextPath}/images/5e9a97fc44fc12475b6b0e87e2ff5806.jpg"></a></li>
+                    href="#" target="_blank"><img
+                    src="${pageContext.request.contextPath}/images/5e9a97fc44fc12475b6b0e87e2ff5806.jpg"></a></li>
 
             <li class="slide" style=" "><a
-              href="javascript:void(0)"
-              target="_blank"><img
-                src="${pageContext.request.contextPath}/images/2.jpg"></a></li>
+                    href="javascript:void(0)"
+                    target="_blank"><img
+                    src="${pageContext.request.contextPath}/images/2.jpg"></a></li>
 
             <li class="slide" style=""><a
-              href="#" target="_blank"><img
-                src="${pageContext.request.contextPath}/images/8db2f0313616ebe46ca5770769850b42.png"></a></li>
+                    href="#" target="_blank"><img
+                    src="${pageContext.request.contextPath}/images/8db2f0313616ebe46ca5770769850b42.png"></a></li>
             <div class="fader_controls">
               <div class="pic_page prev" data-target="prev"></div>
               <div class="pic_page next" data-target="next"></div>
@@ -136,18 +135,20 @@
           </div>
         </div>
       </div>
-
       <div class="headline">
-             <li><a href="find/20400.html"
-            title="【Java学习】如何系统学习java？"><img
-              src="${pageContext.request.contextPath}/images/3ee0644472fa8556562ab3d8716b5316.jpg"
-              alt="【2020届校园招聘】【2020届校园招聘】如何准备互联网校招？"><span>【2019届校园招聘】<br>  该如何准备互联网校招？</span></a></li>
+        <ul>
+          <li><a href="find/20400.html"
+                 title="【Java学习】如何系统学习java？"><img
+                  src="${pageContext.request.contextPath}/images/3ee0644472fa8556562ab3d8716b5316.jpg"
+                  alt="【2020届校园招聘】【2020届校园招聘】如何准备互联网校招？"><span>【2019届校园招聘】<br> 该如何准备互联网校招？</span></a></li>
           <li><a href="find/19873.html"
-            title="【Java学习】java程序员必备知识点…"><img
-              src="${pageContext.request.contextPath}/images/3f0b6da48a6fd4e626a021ff7bd0d74f.jpg"
-              alt="【匆匆校园招聘季】总结校招经历的这几个月…"><span>【匆匆校园招聘季】<br>总结校招经历的这几个月</span></a></li>
+                 title="【Java学习】java程序员必备知识点…"><img
+                  src="${pageContext.request.contextPath}/images/3f0b6da48a6fd4e626a021ff7bd0d74f.jpg"
+                  alt="【匆匆校园招聘季】总结校招经历的这几个月…"><span>【匆匆校园招聘季】<br>总结校招经历的这几个月</span></a></li>
         </ul>
       </div>
+	  
+	  
 
 
       <div class="clearblank"></div>
