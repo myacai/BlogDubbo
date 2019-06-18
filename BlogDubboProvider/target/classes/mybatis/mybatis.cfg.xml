@@ -14,13 +14,13 @@
 		<setting name="cacheEnabled" value="true"/>
 		<!-- 开启 sql调试 -->
 		<!--  <setting name="logImpl" value="STDOUT_LOGGING" /> -->
-		
+		<setting name="logImpl" value="STDOUT_LOGGING" />
 	</settings>
-	<!-- 为JAVA PO类起类别名 -->
-	<typeAliases>
-		<!-- 别名方式2，自动扫描，将JAVA类的类名作为类的类别名 -->
-		<package name="com.system.po" />
-	</typeAliases>
+	<!-- 为JAVA PO类起类别名
+	<typeAliases>-->
+		<!-- 别名方式2，自动扫描，将JAVA类的类名作为类的类别名
+		<package name="com.cai.mapper" />
+	</typeAliases>-->
 
 
 	<!--<mappers> -->

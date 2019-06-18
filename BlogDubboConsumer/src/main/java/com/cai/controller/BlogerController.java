@@ -119,17 +119,18 @@ public class BlogerController {
     public String login(String username,HttpSession session,String password,Model model) {  
         String result = "";
         //MD5加密
-        password = CipherUtil.generatePassword(password);
+        //password = CipherUtil.generatePassword(password);
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         Subject currentUser = SecurityUtils.getSubject();
         try {
             if (!currentUser.isAuthenticated()){            //shiro验证
-                token.setRememberMe(true);               //记住密码
+                //token.setRememberMe(true);               //记住密码
                     currentUser.login(token);               //验证角色和权限
             }
             result = "admin/index";             //验证成功
             session.setAttribute("username", username);
         } catch (Exception e) {
+            System.out.println(e);
             result = "login";//验证失败
             model.addAttribute("message", "用户名或密码错误");
         }

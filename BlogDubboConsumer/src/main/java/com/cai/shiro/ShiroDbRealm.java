@@ -10,8 +10,10 @@ import org.apache.shiro.cache.Cache;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.SimplePrincipalCollection;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+
 
 public class ShiroDbRealm extends AuthorizingRealm {
 	private static final String ALGORITHM = "MD5";
@@ -30,11 +32,18 @@ public class ShiroDbRealm extends AuthorizingRealm {
 	protected AuthenticationInfo doGetAuthenticationInfo(
 			AuthenticationToken authcToken) throws AuthenticationException {
 		UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
+		System.out.println(token.getUsername());
 		Bloger bloger = blogerService.findUserByLoginName(token.getUsername());
-		CipherUtil cipher = new CipherUtil();// MD5加密
+
+		//CipherUtil cipher = new CipherUtil();// MD5加密
 		if (bloger != null) {
+			/*
 			return new SimpleAuthenticationInfo(bloger.getUsername(),
 					cipher.generatePassword(bloger.getPassword()), getName());
+					*/
+			System.out.println(bloger.getUsername());
+			return new SimpleAuthenticationInfo(bloger.getUsername(),
+					bloger.getPassword(), getName());
 		} else {
 			throw new AuthenticationException();
 		}

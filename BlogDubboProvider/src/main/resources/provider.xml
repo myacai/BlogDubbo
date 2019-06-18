@@ -6,11 +6,11 @@
 		http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
 		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-
+	<!--
 	<import resource="classpath:applicationContext-dao.xml" />
 	<import resource="classpath:applicationContext-service.xml" />
 	<import resource="classpath:applicationContext-trsaction.xml" />
-
+	-->
 	<!-- 1、指定当前服务/应用的名字（同样的服务名字相同，不要和别的服务同名） -->
 	<dubbo:application name="service-provider"></dubbo:application>
 
