@@ -44,6 +44,7 @@ public class BlogServiceImpl implements BlogService {
   
   public Blog selectBlogUserById(Integer id) {
     // TODO Auto-generated method stub
+    System.out.println("selectBlogUserById");
     Blog blog = blogMapper.selectBlogUserById(id);
     if (blog != null) {
       synchronized (blog) {

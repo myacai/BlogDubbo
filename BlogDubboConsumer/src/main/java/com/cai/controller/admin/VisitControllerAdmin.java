@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 @Controller
@@ -31,15 +30,24 @@ public class VisitControllerAdmin {
 	 @AccessLimit(seconds=1,maxCount=10)
 	 public Map<String, Object> selectBlogListByDate(@RequestParam(value="format") String format,@RequestParam(value="startTime") String startTime,@RequestParam(value="endTime") String endTime) throws Exception{
 		 Map<String, Object> map=new HashMap<String, Object>();
+
 		 if(format!=""&&format!=null){
 			 map.put("format", format);
 		 }
+		 		 /*
 		 if(startTime!=""&&startTime!=null){
 			 map.put("startTime", startTime);
 		 }
 		 if(endTime!=""&&endTime!=null){
 			 map.put("endTime", endTime);
-		 }
+		 }*/
+		 Date dNow = new Date( );
+		 SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+		 Date astart = getSomeDay(dNow,-24);
+		 System.out.println("" + ft.format(startTime));
+		 map.put("startTime", (String)("" + ft.format(startTime)));
+		 map.put("endTime", (String)("" + ft.format(dNow)));
+
 		 List<?> list=visitService.selectVisitListByDate(map);
 		 Map<String, Object> returnMap=new HashMap<String, Object>();
 		 if(list.size()>0){
@@ -51,7 +59,15 @@ public class VisitControllerAdmin {
 		 returnMap.put("list", list);
 		 return returnMap;
 	 }
-	 
+
+	 //想要获取的日期与传入日期的差值 比如想要获取传入日期前四天的日期 day=-4即可
+	 public Date getSomeDay(Date date, int day){
+		 Calendar calendar = Calendar.getInstance();
+		 calendar.setTime(date);
+		 calendar.add(Calendar.DATE, day);
+		 return calendar.getTime();
+	 }
+
 	 /**
 	  * 模糊组合分页查询访客信息
 	  * @param

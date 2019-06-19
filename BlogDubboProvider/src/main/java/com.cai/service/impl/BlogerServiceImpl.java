@@ -52,7 +52,7 @@ public class BlogerServiceImpl implements BlogerService {
 	@Override
 	public Bloger findUserByLoginName(String name) {
 		// TODO Auto-generated method stub
-		System.out.println("name");
+		System.out.println("findUserByLoginName");
 		return blogerMapper.findUserByLoginName(name);
 	}
 

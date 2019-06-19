@@ -1,25 +1,22 @@
 package com.cai.shiro;
 
 
+import com.cai.controller.SpringBeanFactoryUtils;
 import com.cai.model.Bloger;
 import com.cai.service.BlogerService;
-import com.cai.util.CipherUtil;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.SimplePrincipalCollection;
-import org.springframework.stereotype.Component;
-
-import javax.annotation.Resource;
 
 
 public class ShiroDbRealm extends AuthorizingRealm {
 	private static final String ALGORITHM = "MD5";
 
-	@Resource(name = "blogerService")
-	private BlogerService blogerService;
+	//@Resource(name = "blogerService")
+	//private BlogerService blogerService;
 
 	public ShiroDbRealm() {
 		super();
@@ -33,6 +30,7 @@ public class ShiroDbRealm extends AuthorizingRealm {
 			AuthenticationToken authcToken) throws AuthenticationException {
 		UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
 		System.out.println(token.getUsername());
+		BlogerService blogerService = SpringBeanFactoryUtils.getBean("blogerService", BlogerService.class);
 		Bloger bloger = blogerService.findUserByLoginName(token.getUsername());
 
 		//CipherUtil cipher = new CipherUtil();// MD5加密
